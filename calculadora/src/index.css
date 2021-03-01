@@ -1,4 +1,4 @@
-@font-face{
+@font-face{ /*Importando a fonte*/
   font-family: 'RobotoMono';
   src:url('./fontes/RobotoMono-Thin.ttf')
 }
@@ -9,8 +9,8 @@
 
 body{
   display: flex;
-  height: 100vh;
-  justify-content: center;
+  height: 100vh; /*Altura completa da tela*/
+  justify-content: center; 
   align-items: center;
   text-align: center;
   color: #fff;
