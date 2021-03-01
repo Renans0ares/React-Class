@@ -1,4 +1,4 @@
-:root{
+:root{ /*Definindo variaveis */
     --bg-button:#f0f0f0;
     --border-button: solid 1px #888;
 }
@@ -9,26 +9,25 @@
     border: none;
     border-right: var(--border-button);
     border-bottom: var(--border-button);
-    outline: none;
+    outline: none; /*Tira o contorno envolta*/
 }
 .button:active {
     background-color: #ccc;
 }
 
 .button.double {
-    grid-column: span 2;
+    grid-column: span 2; /*Para o 0*/
 }
 
 .button.triple {
-    grid-column: span 3;
+    grid-column: span 3; /*Para o AC*/
 }
 
 .button.operation{
-    background-color: #fa8231;
+    background-color: #fa8231; /*Para operações*/
     color: #FFF;
 }
 
 .button.operation:active {
-    background-color: #fa8231cc;
+    background-color: #fa8231cc; /*Ficando um pouco mais escuro*/
 }
-
