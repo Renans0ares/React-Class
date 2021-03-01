@@ -1,20 +1,20 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react' //Usando Componente de classe
 import './Calculator.css'
 
 import Button from '../components/Button'
 import Display from '../components/Display'
 
-const initialState = {
-    displayValue: '0',
-    clearDisplay:false,
+const initialState = { //Estado Inicial
+    displayValue: '0', //Valor que começará a ser exibido na calculadora
+    clearDisplay:false, 
     operation: null,
-    values: [0,0],
-    current: 0
+    values: [0,0], //Valor da primeira operação e da segunda
+    current: 0 //Identificar se está manipulando o primeiro valor ou segundo
 }
 
 export default class Calculator extends Component {
 
-    state = {...initialState}
+    state = {...initialState} //Clone do obj e atribuido ao state
 
     constructor(props){
         super(props)
@@ -55,28 +55,28 @@ export default class Calculator extends Component {
     }
 
     addDigit(n) {
-        if(n == '.' && this.state.displayValue.includes('.')){
+        if(n == '.' && this.state.displayValue.includes('.')){ //Regra para evitar a ter 2 pontos na API
             return 
         }
 
-        const clearDisplay = this.state.displayValue === '0' || this.state.clearDisplay
+        const clearDisplay = this.state.displayValue === '0' || this.state.clearDisplay //Precisa limpar? Apenas se estiver com 0 ou se a var for true
         const currentValue = clearDisplay ? '' : this.state.displayValue
         const displayValue = currentValue + n
         this.setState({ displayValue, clearDisplay: false })
 
         if(n !== '.'){
-            const i = this.state.current
+            const i = this.state.current // Recebendo primeiro valor selecionado da calculadora
             const newValue = parseFloat(displayValue)
-            const values = [...this.state.values]
+            const values = [...this.state.values] //Clonando o Array para "values"
             values[i] = newValue
             this.setState({ values })
             console.log(values)
         }
     }
 
-    render(){
-        return (
-            <div className="calculator">
+    render(){ //Para renderizar a calculadora
+        return ( //Necessário um retunr para todo render
+            <div className="calculator"> {/* Refencia de class Jsx é className para não dar erros*/}
                 <Display value={this.state.displayValue} />               
                 <Button label="AC" click={this.clearMemory} triple />
                 <Button label="/" click={this.setOperation} operation />
