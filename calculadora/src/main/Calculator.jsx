@@ -75,7 +75,7 @@ export default class Calculator extends Component {
     }
 
     render(){ //Para renderizar a calculadora
-        return ( //Necessário um retunr para todo render
+        return ( //Necessário um return para todo render
             <div className="calculator"> {/* Refencia de class Jsx é className para não dar erros*/}
                 <Display value={this.state.displayValue} />               
                 <Button label="AC" click={this.clearMemory} triple />
