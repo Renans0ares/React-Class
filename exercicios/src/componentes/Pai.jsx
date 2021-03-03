@@ -1,6 +1,6 @@
 import React from  'react'
 // import Filho from './Filho'
-import { childrenWithProps } from '../Utils/Util'
+import { childrenWithProps } from '../Utils/Util' //Importando Função
 
 
 export default props => 
